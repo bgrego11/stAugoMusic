@@ -29,12 +29,13 @@ $(document).ready(function(){
     })
 
     $(document).on("click",".add",function(e){
+        self = $(this)
         title = $(this).data('title')
         artist = $(this).data('artist')
         apiUrl = "/add/" + title + "/" + artist
         $.get(apiUrl, function(data){
             console.log(data)
-            
+            self.remove()
     
             })
         })
